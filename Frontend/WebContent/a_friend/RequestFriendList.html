@@ -1,0 +1,35 @@
+
+<div ng-controller="friendcontrollers">
+<table>
+<tr>
+  <td ng-mouseover=f_get(currentUser.loginname)><img ng-mouseover=showrequestlist(currentUser.loginname) src="image/sm.jpeg"  width="300" height="600"></td>
+  <td ng-mouseover=f_get(currentUser.loginname)>
+  <div ng-mouseover=showrequestlist(currentUser.loginname) class="friend" >
+         
+        <div class="friendhead">Friend Request</div>   
+         <div style="background-color:white;height:.8vw;">&nbsp;</div>
+       
+         
+         <div ng-repeat="friend in requestlists">
+          
+          <table>
+          
+          <tr>
+          
+          <td><img src="" width="50" height="50"></td>
+          <td><div class="rfriendtext">{{friend.friendloginname}}</div></td>
+          <td><button ng-mousedown=aspectrequest(friend.friendid) class="acceptfriend">accept</button></td>
+          <td><button ng-mousedown=rejectrequest(friend.friendid) class="denyfriend">deny</button></td>
+          
+          </tr>
+          
+          </table>   
+              <div style="background-color:blue;height:.8vw;">&nbsp;</div>
+         </div>
+         
+  </div></td>
+  <td ng-mouseover=f_get(currentUser.loginname)><img ng-mouseover=showrequestlist(currentFriend.loginname) src="image/xl.jpg"  width="300" height="600"></td>
+</tr>
+</table>
+
+</div>

@@ -1,0 +1,103 @@
+
+
+
+
+<div  ng-controller="forumcontrollers">
+
+
+<table>
+ <tr>
+  
+  <td>
+  
+  <img src="image/hem.jpg" class="showimageleft" width="300" height="600">
+    
+  
+  </td>
+  
+  
+  <td class="showforum">
+  <div class="showforum" ng-mouseover=listforums()>
+  <div ng-mouseover=listforumcomments()>
+  <div ng-repeat="forum in forumlist">
+
+
+  <table style="border:white solid 5px;" >
+  <tr>
+  <td colspan="2"><div class="show_blog_name_text">{{forum.forumname}}</div></td>
+  
+  <td><img  src="image/edit.png" title="edit" class="edit" ng-mouseover=updateforumpage(forum.forumid) width="50" height="50"></td>
+  
+  <td><img  src="image/delete.png" title="delete" ng-mousedown=deleteforums(forum.forumid) class="delete"  width="50" height="50"></td>
+  
+  
+  
+  </tr >
+   
+  <tr >
+  
+  <td colspan="4"><div class="show_blog_content_text">{{forum.forumcontent}}</div></td>
+     
+  </tr>
+  <tr >
+  <td><div style="display:flex;" ng-mousedown=likeforums(forum.forumid) class="s_like"><img  src="image/like.png" width="70" height="70"><button class="s_blog_button" >{{forum.likes}}</button></div></td>
+  <td><div style="display:flex;"  ng-mousedown=dislikeforums(forum.forumid) class="s_like"><img  src="image/dislike.png" width="70" height="70"><button class="s_blog_button" >{{forum.dislikes}}</button></div></td>
+  <td><button class="s_blog_button_comment" ng-mouseover=addforumcommentpage(forum.forumid)>comment</button></td>
+   <td><button class="s_blog_button_comment" ng-mouseover=addforumpage()>Forum</button></td>
+   
+ 
+  
+ 
+  
+  </tr>
+    
+    
+  </table>
+  <div  style="background-color:green;height:8px">&nbsp;</div>
+  <div ng-repeat="comment in forumcommentlist">
+    
+    <table >
+      <tr>
+      <td style="width:100px;">&nbsp;</td>
+      <td>
+      <div ng-show="forum.forumid==comment.forumid" class="commentshow">{{comment.discussiontext}}</div>
+       </td>
+       <td>
+       
+       <img ng-show="forum.forumid==comment.forumid"  src="image/delete.png" title="delete" class="delete" ng-mousedown="deleteforumcomments(comment.commentid)"   width="40" height="40">
+       </td>
+       <td>
+       <button ng-show="forum.forumid==comment.forumid" class="s_blog_button_comment" ng-mouseover=updateforumcommentpage(comment.commentid)>Edit</button>
+       </td>
+       <td>
+       <button ng-show="forum.forumid==comment.forumid" class="s_blog_button_comment" ng-mouseover=addforumcommentpage(forum.forumid)>comment</button>
+       
+       </td>
+       </tr>
+      <tr><td style="width:100px;"></td>
+      <td colspan="2"> <div ng-show="forum.forumid==comment.forumid" style="background-color:violet;width:300px;height:8px">&nbsp;</div></td></tr>
+    </table>
+    
+  </div>
+ <div style="background-color:white;border:green dotted 5px;height:15px;">&nbsp;</div>
+ 
+  </div>
+  
+  </div>
+  
+  </div>
+  
+
+
+
+</td>
+  <td><img src="image/glit.jpg"  class="showimageright" width="400" height="600">
+  </td>
+</tr>
+
+
+
+</table>
+
+
+</div>

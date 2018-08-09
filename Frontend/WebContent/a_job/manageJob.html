@@ -1,0 +1,26 @@
+<div ng-controller="jobcontrollers">
+<img ng-mouseover="list_m()" src="image/job.gif" class="" width="1350" height="300">
+<div class="job" ng-mouseover="list_m()"></div>
+<table>
+<tr>
+  <td ng-mouseover="list_m()"><img src="image/m12.jpg"  width="300" height="600"></td>
+  <td ng-mouseover="list_m()">
+  <div class="tjob" >
+       <div ng-repeat="job in joblists">
+       <table>
+       <tr><td style="width:600px;"><div class="jobformtext">Company Name:<span class="jobshow">{{job.company}}</span></div></td>
+     <td>       <button class="apply"  ng-mousedown=rejectjob(job.jobid)>Deny</button>
+       </td> 
+      <td><img  src="image/delete.png" title="delete" ng-mousedown=deletejob(job.jobid) class="delete"  width="50" height="50"></span></td>
+  
+       </tr>
+              
+       </table>
+         <div style="background-color:red;height:.8vw;">&nbsp;</div>
+       
+       </div>
+  </div></td>
+  <td ng-mouseover="list_m()"><img src="image/a2.jpg"  width="300" height="600"></td>
+</tr>
+</table>
+</div>

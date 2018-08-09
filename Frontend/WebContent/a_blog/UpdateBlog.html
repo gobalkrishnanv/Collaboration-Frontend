@@ -1,0 +1,18 @@
+
+<div class="addBlog"   ng-controller="blogcontrollers">
+
+<div class="addBlogRight"  >
+
+<img src="image/addleft.jpg" class="addBlogImageLeft" width="300" height="600">
+
+<form class="addBlogform">
+<div class="reg_text">Blog Name</div><input class="blog_input" type="text" ng-model="blogs.blogname" ng-value="{{blogs.blogname}}" /> 
+<div class="reg_text">Blog Content</div><textarea class="blog_address" ng-model="blogs.blogcontent" ng-value="{{blogs.blogcontent}}"></textarea>
+<br><button class="blog_button" ng-click=updateblogs(u_blog_id)>Update Blog</button>
+
+</form>
+<img src="image/h.gif"  class="addBlogImageRight" width="400" height="600">
+
+
+</div>
+</div>

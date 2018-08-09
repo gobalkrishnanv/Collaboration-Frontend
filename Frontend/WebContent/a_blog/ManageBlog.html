@@ -1,0 +1,61 @@
+
+
+
+
+<div  ng-controller="blogcontrollers">
+
+
+<table>
+ <tr>
+  
+  <td>
+  
+  <img src="image/addleft.jpg" class="showimageleft" width="300" height="600">
+    
+  
+  </td>
+  
+  
+  <td class="showblog">
+  <div class="showblog" ng-mouseover=listblogs_m()>
+    <div ng-repeat="blog in bloglist">
+
+
+  <table style="border:white solid 5px;">
+  <tr>
+  <td ><div class="mtext">{{blog.blogname}}</div></td>
+  
+  <td><div style="display:flex;" ng-mousedown=approveblogs(blog.blogid) class="s_like"><img  src="image/like.png" width="70" height="70"><div style="font-family:Comic Sans MS;color:darkgreen;font-size:2vw;text-align: center;" >Approve</div></div></td>
+  <td><div style="display:flex;"  ng-mousedown=rejectblogs(blog.blogid) class="s_like"><img  src="image/dislike.png" width="70" height="70"><div style="font-family:Comic Sans MS;color:red;font-size:2vw;text-align: center;" >Reject</div></div></td>
+  
+  <td><img  src="image/delete.png" title="delete" ng-mousedown=deleteblogs_m(blog.blogid) class="delete"  width="50" height="50"></td>
+  
+  
+  
+  </tr >
+   
+  
+     
+    
+  </table>
+  <div style="background-color:green;height:8px">&nbsp;</div>
+  
+  </div>
+  
+  
+  </div>
+  
+
+
+
+</td>
+  <td><img src="image/h.gif"  class="showimageright" width="400" height="600">
+  </td>
+</tr>
+
+
+
+</table>
+
+
+</div>

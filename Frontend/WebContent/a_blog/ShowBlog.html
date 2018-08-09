@@ -1,0 +1,103 @@
+
+
+
+
+<div  ng-controller="blogcontrollers">
+
+
+<table >
+ <tr>
+  
+  <td>
+  
+  <img src="image/addleft.jpg" class="showimageleft" width="300" height="600">
+    
+  
+  </td>
+  
+  
+  <td class="showblog">
+  <div class="showblog" ng-mouseover=listblogs()>
+  <div ng-mouseover=listblogcomments()>
+  <div ng-repeat="blog in bloglist">
+
+
+  <table style="border:white solid 5px;" ng-show="blog.status=='A'">
+  <tr>
+  <td colspan="2"><div class="show_blog_name_text">{{blog.blogname}}</div></td>
+  
+  <td><img ng-hide="currentUser.loginname==''" ng-show="currentUser.loginname!='' && currentUser.role=='user'" src="image/edit.png" title="edit" class="edit" ng-mouseover=updateblogpage(blog.blogid) width="50" height="50"></td>
+  
+  <td><img ng-hide="currentUser.loginname==''" ng-show="currentUser.loginname!='' && currentUser.role=='user'" src="image/delete.png" title="delete" ng-mousedown=deleteblogs(blog.blogid) class="delete"  width="50" height="50"></td>
+  
+  
+  
+  </tr >
+   
+  <tr >
+  
+  <td colspan="4"><div class="show_blog_content_text">{{blog.blogcontent}}</div></td>
+     
+  </tr>
+  <tr ng-hide="currentUser.loginname==''" ng-show="currentUser.loginname!='' && currentUser.role=='user'" >
+  <td><div style="display:flex;" ng-mousedown=likeblogs(blog.blogid) class="s_like"><img  src="image/like.png" width="70" height="70"><button class="s_blog_button" >{{blog.likes}}</button></div></td>
+  <td><div style="display:flex;"  ng-mousedown=dislikeblogs(blog.blogid) class="s_like"><img  src="image/dislike.png" width="70" height="70"><button class="s_blog_button" >{{blog.dislikes}}</button></div></td>
+  <td><button class="s_blog_button_comment" ng-mouseover=addblogcommentpage(blog.blogid)>comment</button></td>
+   <td><button class="s_blog_button_comment" ng-mouseover=addblogpage()>Blog</button></td>
+   
+ 
+  
+ 
+  
+  </tr>
+    
+    
+  </table>
+  <div ng-show="blog.status=='A' style="background-color:green;height:8px">&nbsp;</div>
+  <div ng-repeat="comment in blogcommentlist">
+    
+    <table ng-show="blog.status=='A'">
+      <tr>
+      <td style="width:100px;">&nbsp;</td>
+      <td>
+      <div ng-show="blog.blogid==comment.blogid" class="commentshow">{{comment.commenttext}}</div>
+       </td>
+       <td>
+       
+       <img ng-show="blog.blogid==comment.blogid"  src="image/delete.png" title="delete" class="delete" ng-mousedown="deleteblogcomments(comment.commentid)"   width="40" height="40">
+       </td>
+       <td>
+       <button ng-show="blog.blogid==comment.blogid" class="s_blog_button_comment" ng-mouseover=updateblogcommentpage(comment.commentid)>Edit</button>
+       </td>
+       <td>
+       <button ng-show="blog.blogid==comment.blogid" class="s_blog_button_comment" ng-mouseover=addblogcommentpage(blog.blogid)>comment</button>
+       
+       </td>
+       </tr>
+      <tr><td style="width:100px;"></td>
+      <td colspan="2"> <div ng-show="blog.blogid==comment.blogid" style="background-color:violet;width:300px;height:8px">&nbsp;</div></td></tr>
+    </table>
+    
+  </div>
+ <div ng-show="blog.status=='A'"style="background-color:white;border:green dotted 5px;height:15px;">&nbsp;</div>
+ 
+  </div>
+  
+  </div>
+  
+  </div>
+  
+
+
+
+</td>
+  <td><img src="image/h.gif"  class="showimageright" width="400" height="600">
+  </td>
+</tr>
+
+
+
+</table>
+
+
+</div>

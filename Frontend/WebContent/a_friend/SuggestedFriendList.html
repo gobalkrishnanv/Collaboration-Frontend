@@ -1,0 +1,32 @@
+
+<div ng-controller="friendcontrollers">
+<table>
+<tr>
+  <td ng-mouseover=f_get(currentUser.loginname) ><img ng-mouseover=showsuggestlist(currentUser.loginname) src="image/sm.jpeg"  width="300" height="600"></td>
+  <td ng-mouseover=f_get(currentUser.loginname)>
+ <!--   {{getfriends.friendid}} -->
+  <div ng-mouseover=showsuggestlist(currentUser.loginname) class="friend" >
+         <div class="friendhead">Suggested Friends</div>   
+         <div style="background-color:white;height:.8vw;">&nbsp;</div>
+         
+         <div ng-repeat="friend in suggestlists">
+          <table>
+          
+          <tr>
+          <td><img src="" width="50" height="50"></td>
+          <td><div class="friendtext">{{friend.loginname}}</div></td>
+          <td><button ng-mousedown=sendrequest_s(getfriends.friendid,friend.friendid) class="sendfriend">send friend request</button></td>
+          
+          <td><img  src="image/delete.png" title="delete" ng-mousedown=deletefriend(friend.friendid) class="delete"  width="50" height="50"></td>
+          </tr>
+          
+          </table>   
+           <div style="background-color:blue;height:.8vw;">&nbsp;</div>
+         </div>
+         
+  </div></td>
+  <td ng-mouseover=f_get(currentUser.loginname)><img ng-mouseover=showsuggestlist(currentUser.loginname) src="image/xl.jpg"  width="300" height="600"></td>
+</tr>
+</table>
+
+</div>

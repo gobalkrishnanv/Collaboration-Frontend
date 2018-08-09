@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+
+<!-- Compiled and minified CSS -->
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.js"></script>	
+	
+<script src="RouteConfig.js"></script>
+<script src="a_user/usercontroller.js"></script>
+<script src="a_blog/blogcontroller.js"></script>
+<script src="a_forum/forumcontroller.js"></script>
+<script src="a_job/jobcontroller.js"></script>
+<script src="a_chat/chatcontroller.js"></script>
+<script src="a_chat/chatservice.js"></script>
+
+<script src="a_friend/friendcontroller.js"></script>
+
+<meta name="viewport" content="width=device-width, height=device-height,user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>Collabaration</title>
+</head>
+<body ng-app="app">
+
+<div class="menubar" ng-controller="usercontroller">
+<nav class="menu">
+
+   <a  href="#/home"     class="menuitem">Home</a> &nbsp;
+   
+   <a ng-show="currentUser.loginname==''" href="#/login"    class="menuitem">Login</a> &nbsp;
+   <a ng-show="currentUser.loginname==''" href="#/register" class="menuitem">Register</a> &nbsp;
+  <!--   <a ng-hide="currentUser.loginname!=''" href="#/chat" class="menuitem">Chat</a> &nbsp;-->
+   <a ng-show="currentUser.loginname!=''" href="#/picture"    class="menuitem">Profile Picture</a> &nbsp;
+   
+   <div class="dropdownblog">
+     <button class="dropbutton">Blog</button>
+     <div class="dropdown-content">
+       <a  ng-show="currentUser.loginname!='' && currentUser.role=='user'"   href="#/addBlog"  >Add Blog</a>
+       <a href="#/showBlog" >Show Blog</a>
+       <a ng-show="currentUser.loginname!='' && currentUser.role=='admin'"   href="#/manageBlog" >Manage Blog</a>
+       </div>
+   
+   </div>
+   
+   
+   
+   <div class="dropdownblog">
+     <button class="dropbutton">Forum</button>
+     <div class="dropdown-content">
+       <a  href="#/addforum"  >Add Forum</a>
+       <a href="#/showforum" >Show Forum</a>
+       <!-- <a  ng-show="currentUser.loginname!='' && currentUser.role=='admin'" href="#/manageforum" >Manage Forum</a>
+       -->
+       </div>
+   
+   </div>
+   
+   
+    <div  ng-show="currentUser.loginname!='' && currentUser.role=='user'" class="dropdownblog" ng-controller="friendcontrollers">
+     <button  class="dropbutton">Friend</button>
+     <div class="dropdown-content-friend">
+       <a href="#/friendList">Friends</a>
+       <a href="#/pendingFriendRequestList" >Friend Request</a>
+       <a href="#/suggestedFrientList" >Suggested Friend</a>
+       </div>
+   
+   </div>
+   
+   <div class="dropdownblog">
+     <button class="dropbutton">Job</button>
+     <div class="dropdown-content-friend">
+       <a  ng-show="currentUser.loginname!='' && currentUser.role=='admin'" href="#/addjob">Add Job</a>
+       <a href="#/showjob" >Show Job</a>
+       <a  ng-show="currentUser.loginname!='' && currentUser.role=='admin'" href="#/managejob" >Manage Job</a>
+       </div>
+   
+   </div>
+   
+   
+   <a href="#/about"    class="menuitem">About</a> &nbsp;
+   
+   
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;<span style="color:purple;font-size:3vw;">{{currentUser.loginname}}</span>
+   <img ng-show="currentUser.loginname!=''" class="uima" src="http://localhost:8087/Connecter/getImage/{{currentUser.loginname}}" width="30" height="30"/>
+   <a ng-show="currentUser.loginname!=''" ng-mousedown=logout() href="#/logout"   class="menuitem">Logout</a> &nbsp;
+</nav>
+</div>
+
+
+
+
+
+<div ng-view></div>
+</body>
+</html>

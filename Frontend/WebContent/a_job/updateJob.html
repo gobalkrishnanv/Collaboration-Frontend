@@ -1,0 +1,20 @@
+<div ng-controller="jobcontrollers">
+<img src="image/job.gif" class="" width="1350" height="300">
+<div class="job"></div>
+<table >
+<tr>
+  <td><img src="image/m12.jpg"  width="300" height="600"></td>
+  <td><div class="tjob">
+  <form class="jobform">
+  <div class="jobformtext">Company Name:</div><input class="jobformi" type="text" ng-model="jobs.company"/><br>
+  <div class="jobformtext">Designation:</div><input class="jobformi" type="text" ng-model="jobs.designation"/><br>
+  <div class="jobformtext">Location:</div><input class="jobformi" type="text" ng-model="jobs.location"/><br>
+  <div class="jobformtext">CTC:</div><input class="jobformi" type="text" ng-model="jobs.ctc"/><br>
+  <div class="jobformtext">Skill:</div><input class="jobformi" type="text" ng-model="jobs.skill"/><br>  
+  <button ng-click=updatejob(u_j_id) class="jobbut">update Job</button>
+  </form>
+  </div></td>
+  <td><img src="image/a2.jpg"  width="300" height="600"></td>
+</tr>
+</table>
+</div>

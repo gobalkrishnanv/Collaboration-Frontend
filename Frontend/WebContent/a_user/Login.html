@@ -1,0 +1,18 @@
+<div class="login">
+
+<div class="login_title">Login</div>
+ <img class="login_image" src="image/login.jpg">
+<div class="form" ng-controller="usercontroller">
+
+   <form class="form_">
+   <div class="text">UserName:</div><br>
+   <input class="input_login" type="text" ng-model="user.loginname" placeholder="username"/><br>
+   
+   <div class="text">Password:</div><br>
+   <input class="input_login" type="password" ng-model="user.password" placeholder="password"/><br>
+   <button class="login_button" ng-click=checklogin(user.loginname,user.password)>Login</button>
+   </form>
+
+
+</div>
+</div>

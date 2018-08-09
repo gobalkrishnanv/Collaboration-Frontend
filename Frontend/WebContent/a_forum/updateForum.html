@@ -1,0 +1,18 @@
+
+<div class="addBlog"   ng-controller="forumcontrollers">
+
+<div class="addForumRight"  >
+
+<img src="image/hem.jpg" class="addBlogImageLeft" width="300" height="600">
+
+<form class="addBlogform">
+<div class="reg_text">Forum Name</div><input class="blog_input" type="text" ng-model="forums.forumname" ng-value="{{blogs.blogname}}" /> 
+<div class="reg_text">Forum Content</div><textarea class="blog_address" ng-model="forums.forumcontent" ng-value="{{blogs.blogcontent}}"></textarea>
+<br><button class="blog_button" ng-click=updateforums(u_forum_id)>Update Forum</button>
+
+</form>
+<img src="image/glit.jpg"  class="addBlogImageRight" width="400" height="600">
+
+
+</div>
+</div>

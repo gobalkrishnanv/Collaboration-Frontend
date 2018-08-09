@@ -1,0 +1,28 @@
+<div class="register_title">Register</div>
+<div class="reg" ng-controller="usercontroller">
+
+
+
+<form class="registerform">
+
+<div class="reg_text">LoginName</div><input class="reg_input" type="text" ng-model="user.loginname"/><br>
+<div class="reg_text">UserName</div> <input class="reg_input" type="text" ng-model="user.username"/><br>
+<div class="reg_text">Password</div> <input class="reg_input" type="password" ng-model="user.password"/><br>
+<div class="reg_text">Emailid</div>  <input class="reg_input" type="text" ng-model="user.emailid"/><br>
+<div class="reg_text">Mobile</div>   <input class="reg_input" type="text" ng-model="user.mobile"/><br>
+<div class="reg_text">Address</div>  <textarea class="reg_address" ng-model="user.address"></textarea><br>
+
+<table>
+<tr>
+<td><button class="reg_button" ng-click="registeradmin()">Admin</button></td>
+<td><button class="reg_button" ng-click="registeruser()">User</button></td>
+
+</tr>
+</table>
+</form>
+
+<img src="image/a1.jpg" class="reg_image" >
+
+</div>
+
+

@@ -1,0 +1,61 @@
+
+
+
+
+<div  ng-controller="forumcontrollers">
+
+
+<table>
+ <tr>
+  
+  <td>
+  
+  <img src="image/hem.jpg" class="showimageleft" width="300" height="600">
+    
+  
+  </td>
+  
+  
+  <td class="showforum">
+  <div class="showforum" ng-mouseover=listforums_m()>
+    <div ng-repeat="forum in forumlist">
+
+
+  <table style="border:white solid 5px;">
+  <tr>
+  <td ><div class="mtext">{{forum.forumname}}</div></td>
+  
+  <td><div style="display:flex;" ng-mousedown=approveforums(forum.forumid) class="s_like"><img  src="image/like.png" width="70" height="70"><div style="font-family:Comic Sans MS;color:darkgreen;font-size:2vw;text-align: center;" >Approve</div></div></td>
+  <td><div style="display:flex;"  ng-mousedown=rejectforums(forum.forumid) class="s_like"><img  src="image/dislike.png" width="70" height="70"><div style="font-family:Comic Sans MS;color:red;font-size:2vw;text-align: center;" >Reject</div></div></td>
+  
+  <td><img  src="image/delete.png" title="delete" ng-mousedown=deleteforums_m(forum.forumid) class="delete"  width="50" height="50"></td>
+  
+  
+  
+  </tr >
+   
+  
+     
+    
+  </table>
+  <div style="background-color:green;height:8px">&nbsp;</div>
+  
+  </div>
+  
+  
+  </div>
+  
+
+
+
+</td>
+  <td><img src="image/glit.jpg"  class="showimageright" width="400" height="600">
+  </td>
+</tr>
+
+
+
+</table>
+
+
+</div>

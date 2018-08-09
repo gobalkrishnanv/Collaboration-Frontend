@@ -1,0 +1,47 @@
+<div ng-controller="jobcontrollers">
+<img ng-mouseover="list()" src="image/job.gif" class="" width="1350" height="300">
+<div class="job" ng-mouseover="list()"></div>
+<table>
+<tr>
+  <td ng-mouseover="list()"><img src="image/m12.jpg"  width="300" height="600"></td>
+  <td ng-mouseover="list()">
+  <div class="tjob" >
+       <div ng-repeat="job in joblists">
+       <table>
+       <tr><td style="width:600px;"><div class="jobformtext">Company Name:<span class="jobshow">{{job.company}}</span></div></td>
+         <td ng-show="currentUser.loginname!='' && currentUser.role=='admin'"><span><img  src="image/edit.png" title="edit" class="edit" ng-mouseover=updatejobpage(job.jobid) width="50" height="50"></td>
+         <td ng-show="currentUser.loginname!='' && currentUser.role=='admin'"><img  src="image/delete.png" title="delete" ng-mousedown=deletejob(job.jobid) class="delete"  width="50" height="50"></span></td>
+  
+       </tr>
+       <tr><td><div class="jobformtext">Desgination&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<span class="jobshow">{{job.designation}}</span></div>
+       </td><td>
+       </td></tr>
+       <tr>
+       <td><div class="jobformtext">Location&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<span class="jobshow">{{job.location}}</span></div></td>
+       <td></td>
+       </tr>
+       <tr>
+       <td><div class="jobformtext">CTC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<span class="jobshow">{{job.ctc}}</span></div>
+       </td>
+       <td></td>
+       </tr>
+       <tr>
+       <td><div class="jobformtext">Skill&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<span class="jobshow">{{job.skill}}</span></div>
+       </td>
+       <td ng-show="currentUser.loginname!='' && currentUser.role=='user'">       <button class="apply" ng-hide="user.loginname==''" ng-show="currentUser.loginname!='' && currentUser.role=='user'"  ng-mousedown=applyjob(job.jobid)>Apply</button>
+       </td>
+       <td ng-show="currentUser.loginname!='' && currentUser.role=='user'">       <button class="apply" ng-hide="user.loginname==''" ng-show="currentUser.loginname!='' && currentUser.role=='user'" ng-mousedown=rejectjob(job.jobid)>Deny</button>
+       </td>
+       <td ng-show="currentUser.loginname!='' && currentUser.role=='admin'"><button class="s_blog_button_comment" ng-mouseover=addjobpage()>Job</button></td>
+       
+       </tr>
+       
+       </table>
+         <div style="background-color:red;height:.8vw;">&nbsp;</div>
+       
+       </div>
+  </div></td>
+  <td ng-mouseover="list()"><img src="image/a2.jpg"  width="300" height="600"></td>
+</tr>
+</table>
+</div>

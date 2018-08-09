@@ -1,0 +1,77 @@
+
+
+
+
+
+
+<table>
+ <tr>
+  
+  <td><img src="image/ti.jpg" class="showimageleft" width="300" height="600"></td>
+  <td >
+  
+  
+       <div class="tchat" ng-controller="ChatController">
+
+<form ng-submit="addMessage()" name="ChatMsg">
+<table>
+	<tr>
+		<td class="ctext">Chat Text</td>
+		<td>
+			<input class="citext" type="text" ng-model="message"/>
+		</td>
+		<td>
+			<button class="cbutton" ng-disabled="message.length>140 || message.length==0" >Send</button>
+		</td>
+	</tr>
+</table>
+</form>
+
+<p ng-repeat="message in messages|orderBy:'time':true">
+		<time class="time">{{message.time|date:HH:MM}}</time>
+		<span class="message">{{message.message}}</span>
+</p>
+
+</div>
+       
+  
+  
+  
+  
+  
+  
+  
+  
+  </td>
+  
+  
+  
+  
+  
+  <td><img src="image/ch.jpg"  class="showimageright" width="300" height="600">
+  </td>
+</tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
