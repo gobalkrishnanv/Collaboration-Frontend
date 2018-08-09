@@ -9,6 +9,7 @@
     <li>Login</li>
           <ul>
             <li>login.html</li>
+            <li>picture.html</li>
           </ul>
     <li>Register</li>
            <ul>
